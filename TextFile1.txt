@@ -1,0 +1,84 @@
+
+
+tabella_software_house
+id: primary key autoincrement
+nome: varchar(20)
+città: varchar(50)
+nazione: varchar(30)
+partita iva: bigint
+
+--------------------------------------
+
+tabella_videogiochi
+id: primary key autoincrement
+nome: varchar(50)
+trama: text
+data di rilascio: date
+id_software_house: foreign key sotware house
+id_genere: foreign key genere
+
+---------------------------------------
+
+tabella_genere
+id: primary key autoincrement
+nome: varchar(15)
+
+---------------------------------------
+
+tabella_pegi
+id: primary key autoincrement
+nome: varchar(15)
+id_videogioco: foreign key videogioco
+
+---------------------------------------
+
+tabella_pegi_videogiochi
+id_videogioco: foreign key videogioco
+id_pegi: foreign key pegi
+
+---------------------------------------
+
+tabella_console
+id: primary key autoincrement
+nome: varchar(20)
+id_videogioco: foreign key videogioco
+
+---------------------------------------
+
+tabella_console_videogiochi
+id_videogioco: foreign key videogioco
+id_console: foreign key console
+
+---------------------------------------
+
+tabella_torneo
+id: primary key autoincrement
+nome: varchar(20)
+anno: smalldatetime
+ciità: varchar(50)
+
+----------------------------------------
+
+tabella_giocatori
+id: primary key autoincrement
+nome: varchar(20)
+cognome: varchar(20)
+nickname: varchar(20)
+città: varchar(50)
+id_torneo: foreign key torneo
+
+-----------------------------------------
+
+tabella_voto_recensione
+id_giocatore: foreign key giocatore
+id_videogioco: foreign key videogioco
+recensione: text
+voto: tinyint
+
+-----------------------------------------
+
+tabella_premio
+id: primary key autoincrement
+nome: varchar(25)
+id_videogioco: foreign key videogioco
+
