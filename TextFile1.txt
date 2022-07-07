@@ -25,6 +25,12 @@ nome: varchar(15)
 
 ---------------------------------------
 
+tanella_genere_videogioco
+id_videogioco: foreign key videogioco
+id_genere: foreign key genere
+
+---------------------------------------
+
 tabella_pegi
 id: primary key autoincrement
 nome: varchar(15)
@@ -65,6 +71,12 @@ nome: varchar(20)
 cognome: varchar(20)
 nickname: varchar(20)
 città: varchar(50)
+id_torneo: foreign key torneo
+
+-----------------------------------------
+
+tabella_torneo_giocatore
+id_giocatore: foreign key giocatore
 id_torneo: foreign key torneo
 
 -----------------------------------------
